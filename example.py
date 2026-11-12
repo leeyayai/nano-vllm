@@ -4,7 +4,9 @@ from transformers import AutoTokenizer
 
 
 def main():
-    path = os.path.expanduser("~/huggingface/Qwen3-0.6B/")
+    # path = os.path.expanduser("/root/nano-vllm-workspace/nano-vllm/models/Qwen3-0.6B")
+    # 在autodl，英博云等算力平台运行，模型存放路径
+    path = "/root/nano-vllm-workspace/nano-vllm/models/Qwen3-0.6B"
     tokenizer = AutoTokenizer.from_pretrained(path)
     llm = LLM(path, enforce_eager=True, tensor_parallel_size=1)
 
